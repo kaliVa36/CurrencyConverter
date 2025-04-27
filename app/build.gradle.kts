@@ -85,4 +85,11 @@ dependencies {
 
     // Constrain layout
     implementation(libs.constraint.layout)
+
+    // Unit test
+    testImplementation(libs.mockito)
+    testImplementation(libs.mockito.kotlin)
+
+    // Coroutines
+    testImplementation(libs.kotlinx.coroutines.test)
 }

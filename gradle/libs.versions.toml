@@ -28,6 +28,13 @@ converter_scalar_version = "2.1.0"
 # Constaint layout
 contrainLayout = "1.1.1"
 
+# Unit testing
+mockito-version = "4.11.0"
+mockito-kotlin-version = "4.1.0"
+
+# Coroutines
+kotlinx-coroutines = "1.6.0"
+
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -64,6 +71,13 @@ converter-scalars = { module = "com.squareup.retrofit2:converter-scalars", versi
 
 # Constraint layout
 constraint-layout = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "contrainLayout" }
+
+# Unit test
+mockito = { module = "org.mockito:mockito-core", version.ref = "mockito-version" }
+mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockito-kotlin-version" }
+
+# Courotines
+kotlinx-coroutines-test= { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx-coroutines" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
