@@ -1,4 +1,4 @@
-package com.currencyconverter.app.ui.feature
+package com.currencyconverter.app.ui.feature.selection
 
 import androidx.core.text.isDigitsOnly
 import androidx.lifecycle.ViewModel
@@ -33,8 +33,18 @@ class SelectionAndInputViewModel @Inject constructor(private val apiDataSource: 
                         )
                     }
                 },
-                onFailure = {} // handle error
+                onFailure = { error ->
+                    _selectionAndInputDataState.update { state ->
+                        state.copy(error = error.message.toString())
+                    }
+                }
             )
+        }
+    }
+
+    fun resetError() {
+        _selectionAndInputDataState.update { state ->
+            state.copy(error = "")
         }
     }
 

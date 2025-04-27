@@ -82,4 +82,7 @@ dependencies {
 
     // Converter
     implementation(libs.converter.scalars)
+
+    // Constrain layout
+    implementation(libs.constraint.layout)
 }
