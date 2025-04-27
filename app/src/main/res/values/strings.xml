@@ -7,4 +7,5 @@
     <string name="to">To</string>
     <string name="convert">Convert</string>
     <string name="switch_btn">Switch</string>
+    <string name="converted_value">Converted value</string>
 </resources>

@@ -76,5 +76,9 @@ fun ConversionScreen(
         ) {
             Text(stringResource(R.string.convert))
         }
+
+        Spacer(Modifier.height(PaddingValues.padding_16))
+
+        Text(text = "${stringResource(R.string.converted_value)} ${data.convertedAmount}")
     }
 }

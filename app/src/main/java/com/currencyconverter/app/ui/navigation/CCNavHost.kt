@@ -64,7 +64,7 @@ fun CCNavHost(navController: NavHostController) {
             ConversionScreen(
                 data = data,
                 onValueChanged = viewModel::onAmountValueChanged,
-                onConvertClicked = {},
+                onConvertClicked = viewModel::onConvertClicked,
                 onSwitchClicked = viewModel::onSwitchClicked,
             )
         }
