@@ -41,7 +41,7 @@ class RetrofitModule {
             explicitNulls = false
         }
         return Retrofit.Builder()
-            .baseUrl("https://v6.exchangerate-api.com/v6/d785129f70807011e467b7c4/")
+            .baseUrl("https://v6.exchangerate-api.com/v6/d785129f70807011e467b7c4/") // API KEY for testing
             .client(okHttpClient)
             .addConverterFactory(ScalarsConverterFactory.create())
             .addConverterFactory(json.asConverterFactory("application/json".toMediaType()))
