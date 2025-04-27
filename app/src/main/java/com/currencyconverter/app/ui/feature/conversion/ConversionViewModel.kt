@@ -44,7 +44,15 @@ class ConversionViewModel @Inject constructor(private val apiDataSource: ApiData
             )
         }
 
-        onConvertClicked()
+        if (_conversionDataState.value.amount.isNotEmpty() && _conversionDataState.value.amount != "0") {
+            onConvertClicked()
+        }
+    }
+
+    fun resetError() {
+        _conversionDataState.update { state ->
+            state.copy(error = "")
+        }
     }
 
     fun onConvertClicked() {
@@ -63,7 +71,7 @@ class ConversionViewModel @Inject constructor(private val apiDataSource: ApiData
                         state.copy(convertedAmount = amount)
                     }
                 },
-                onFailure = {} // error handling
+                onFailure = { error -> _conversionDataState.update { state -> state.copy(error = error.message.toString()) } }
             )
         }
     }

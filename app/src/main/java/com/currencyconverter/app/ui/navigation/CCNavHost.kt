@@ -44,6 +44,7 @@ fun CCNavHost(navController: NavHostController) {
                 },
                 onItemFromCurrencySelected = viewModel::onDropdownItemFromCurrencySelected,
                 onItemToCurrencySelected = viewModel::onDropdownItemToCurrencySelected,
+                resetError = viewModel::resetError,
             )
         }
 
@@ -66,7 +67,8 @@ fun CCNavHost(navController: NavHostController) {
                 onSwitchClicked = viewModel::onSwitchClicked,
                 onBack = {
                     navigateAndPopBackstack(NavigationConstants.FIRST_SCREEN, navController)
-                }
+                },
+                resetError = viewModel::resetError,
             )
         }
     }

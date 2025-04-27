@@ -5,4 +5,5 @@ data class ConversionData(
     val currencyFrom: String = "",
     val currencyTo: String = "",
     val convertedAmount: String = "",
+    val error: String = "",
 )

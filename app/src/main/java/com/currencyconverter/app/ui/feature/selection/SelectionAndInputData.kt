@@ -6,4 +6,5 @@ data class SelectionAndInputData(
     val selectedToCurrency: String = "",
     val amount: String = "",
     val currenciesNotSelected: ArrayList<String> = arrayListOf(),
+    val error: String = "",
 )
