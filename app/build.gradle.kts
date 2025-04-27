@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.dagger.hilt.android)
+    alias(libs.plugins.kotlinx.serialization)
     kotlin("kapt")
 }
 
@@ -67,4 +68,18 @@ dependencies {
     kapt(libs.hilt.android.compiler)
     implementation(libs.hilt.dagger)
 
+
+    // Retrofit
+    implementation(libs.retrofit)
+
+    // Okhttp
+    implementation(libs.logging.interceptor)
+    implementation(libs.okhttp)
+
+    // Json
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.kotlinx.serialization.converter)
+
+    // Converter
+    implementation(libs.converter.scalars)
 }
