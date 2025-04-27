@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">CurrencyConverter</string>
+
+    <string name="continue_btn">Continue</string>
+    <string name="amount_to_convert">Enter the amount to convert</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
 </resources>
