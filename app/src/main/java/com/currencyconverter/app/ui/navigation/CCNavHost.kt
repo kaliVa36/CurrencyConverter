@@ -4,10 +4,12 @@ import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.ExitTransition
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.currencyconverter.app.ui.feature.DummyScreen
+import com.currencyconverter.app.ui.feature.DummyViewModel
 
 @Composable
 fun CCNavHost(navController: NavHostController) {
@@ -20,6 +22,7 @@ fun CCNavHost(navController: NavHostController) {
         popExitTransition = { ExitTransition.None }
     ) {
         composable(Route.SPLASH_SCREEN) {
+            val viewModel = hiltViewModel<DummyViewModel>()
             DummyScreen(Color.Red) { navController.navigate(Route.HOME_SCREEN) }
         }
 

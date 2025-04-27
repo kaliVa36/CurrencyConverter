@@ -1,5 +1,6 @@
 package com.currencyconverter.app.data.di
 
+import com.currencyconverter.app.data.service.ApiService
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
 import dagger.Provides
@@ -40,10 +41,15 @@ class RetrofitModule {
             explicitNulls = false
         }
         return Retrofit.Builder()
-            .baseUrl("https://v6.d785129f70807011e467b7c4.exchangerate-api.com/v6/d785129f70807011e467b7c4")
+            .baseUrl("https://v6.exchangerate-api.com/v6/d785129f70807011e467b7c4/")
             .client(okHttpClient)
             .addConverterFactory(ScalarsConverterFactory.create())
             .addConverterFactory(json.asConverterFactory("application/json".toMediaType()))
             .build()
+    }
+
+    @Provides
+    fun provideApiService(retrofit: Retrofit): ApiService {
+        return retrofit.create(ApiService::class.java)
     }
 }
