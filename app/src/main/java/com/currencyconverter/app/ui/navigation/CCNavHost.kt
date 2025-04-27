@@ -6,13 +6,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.graphics.Color
 import androidx.core.os.bundleOf
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.currencyconverter.app.ui.feature.DummyScreen
 import com.currencyconverter.app.ui.feature.conversion.ConversionScreen
 import com.currencyconverter.app.ui.feature.conversion.ConversionViewModel
 import com.currencyconverter.app.ui.feature.selection.SelectionAndInputScreen
@@ -66,6 +64,9 @@ fun CCNavHost(navController: NavHostController) {
                 onValueChanged = viewModel::onAmountValueChanged,
                 onConvertClicked = viewModel::onConvertClicked,
                 onSwitchClicked = viewModel::onSwitchClicked,
+                onBack = {
+                    navigateAndPopBackstack(NavigationConstants.FIRST_SCREEN, navController)
+                }
             )
         }
     }
