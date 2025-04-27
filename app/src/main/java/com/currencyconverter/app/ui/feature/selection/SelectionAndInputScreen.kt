@@ -1,4 +1,4 @@
-package com.currencyconverter.app.ui.feature
+package com.currencyconverter.app.ui.feature.selection
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -74,7 +74,7 @@ fun SelectionAndInputScreen(
             }
 
             DropdownMenu(
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier.fillMaxWidth().width(with(LocalDensity.current) { parentSize.width.toDp() }),
                 expanded = expandedFromCurrency || expandedToCurrency,
                 onDismissRequest = { expandedFromCurrency = false }
             ) {
@@ -103,7 +103,7 @@ fun SelectionAndInputScreen(
             value = data.amount,
             onValueChange = { value -> onValueChanged(value) },
             label = { Text(stringResource(R.string.amount_to_convert)) },
-            modifier = Modifier.width(with(LocalDensity.current) { parentSize.width.toDp() }),
+            modifier = Modifier.fillMaxWidth(),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
             maxLines = 1,
         )

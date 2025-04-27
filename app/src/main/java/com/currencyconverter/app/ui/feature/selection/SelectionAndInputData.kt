@@ -1,4 +1,4 @@
-package com.currencyconverter.app.ui.feature
+package com.currencyconverter.app.ui.feature.selection
 
 data class SelectionAndInputData(
     val currencies: List<String> = emptyList(),

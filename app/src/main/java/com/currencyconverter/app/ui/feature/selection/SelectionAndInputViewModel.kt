@@ -1,4 +1,4 @@
-package com.currencyconverter.app.ui.feature
+package com.currencyconverter.app.ui.feature.selection
 
 import androidx.core.text.isDigitsOnly
 import androidx.lifecycle.ViewModel
